@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+  
+  margin: 0;
+  padding: 0;
+  font-family:  "Open Sans", "Helvetica", "Arial", sans-serif;
+}
+
+
+.heading{
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.overview,
+/* .subscriptions, */
+.tryout,
+.comments,
+.documentation,
+.sdks{
+ /* float:left; */
+ /* margin-left: 210px;  */
+ height: 100%;
+ margin-bottom: 100px;
+ margin-top: -99vh;
+ margin-top: 10px;
+ /* width: 100%; */
+ /* margin-top: 140px; */
+}
+
+.subscriptions{
+  /* width: 177vh; */
+  margin-left: 220px;
+  /* float: right; */
+  padding-left: 10px;
+  background: rgb(244, 244, 247);
+  height: 100%;
+  /* margin-top: -99vh; */
+  /* margin-top: 140px; */
+}
+
+h1{
+  font-size: 2rem;
+  font-style: oblique;
+  font-weight: lighter;
+}
+.subscribe{
+  background: white;
+  margin-top: 40px;
+}
+h2{
+  font-size: 1.5rem;
+ margin-top: 30px ;
+ margin-bottom: 20px;
+
+ font-style: italic;
+ font-weight: lighter;
+}
+p{
+  /* padding-top: 30px; */
+  margin-top: 5px;
+  margin-left: 2px;
+  font-display: initial;
+  font-style: oblique;
+  line-height: 26pt;
+}
+.sub{ 
+ margin-left: 20px;
+ padding-bottom: 10px;
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+  width: 90%;
+}
+.para{
+
+margin-top: -20px;
+padding-bottom: 25px;
+}
+
+.button{
+  padding-left: 20px;
+}
+
+.overview{  
+  margin-left: 220px;
+  /* float: right; */
+  background-color:#f4f4f4;
+
+}
+
+.items{
+  width: 177vh;
+  margin-top: 0px;
+  background: white; 
+}
+
+.more{
+  font-size: 1rem;
+}
+
+div.items.h2{
+  font-variant: inherit;
+  font-size: 2rem;
+}
+
+div.more h3{
+  font-size: 1rem;
+  font-variant: inherit;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.option{
+  width: 400px;
+  height: 35px;
+  border: 0px 0px 1px 0px;
+  border-radius: 10px;
+  margin-left: -80px;
+}
+
+.card1{
+  float: left;
+  width: 48%;
+  height: 300px;
+  margin: 10px;
+}
+
+.card2{
+  float: right;
+  width: 50%;
+  height: 250px;
+}
+
+.listText{
+  font-size: 20px;
+}
+.content{ 
+  line-height: 40pt;  
+}
+
+
+.footer{
+  margin-top: 170px;
+}
+
+.footer a{
+  text-decoration: none;
+  color: black;
+}
+ .tryout,
+ .comments,
+ .SDKs,
+ .documentation{
+  margin-left: 220px;
+  /* float: left;   */
+ width: 177vh;
+ /* padding-right: 50px; */
+  background-color:#e5e2e2;
+  /* margin-top: -99vh; */
+  margin-bottom: 100px;
+  height: 100%;
+} 
+.card{
+  margin-top: 10px;
+  padding-top: 50px;
+ width: 100%;
+ height: auto;
+ margin-bottom: 20px;
+
+}
+
+
+/* Try Out Css */
+
+.select{
+  width: 300px; 
+  margin-bottom: 0px;  
+}
+
+
+
+.card_Content{
+  /* margin-top: 10px; */
+  margin-left: 200px;
+  margin-right: 300px;
+  /* width:max-content; */
+  height: fit-content;
+  margin-bottom: 30px;
+}
+
+.para {
+ margin-top: 0px;
+}
+
+.oauth-btn{
+  margin-top: -30px;
+  margin-left: -20px;
+
+}
+
+.swagger-Btn{
+  width: 30vh;
+  float: right;
+  margin-right: 100px;
+  margin-bottom: 30px;
+  
+}
+.swagger-Btn a{
+  text-decoration: none;
+  color: black;  
+}
+
+ /* For Comment  */
+
+div.documentation h1{
+   margin-top: 25px;
+   font-weight:lighter;
+   margin-left: 25px;
+  
+ }
+.card_comment{
+  width: 100%;
+  height: 210px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.comment_form{
+  margin: 20px;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+}
+.textField{
+  width: 97%;
+  /* margin-bottom:50px; */
+}
+
+.btn1{
+  margin-top: 10px;
+  margin-right: 10px; 
+}
+.card_Nocomment{
+  width: 100%;
+  height: 100px;
+  margin-bottom: 50px;
+  padding-bottom: 20PX;
+}
+
+.icons{
+  float: left;
+ margin: 30px;
+ margin-top: 20px;
+ /* margin-right: 80%; */
+ margin-bottom: 10PX; 
+}
+.cmt_para{
+  margin-top: -25px;
+}
+
+/* For SDKs  */
+
+.sdk_card{
+  float: left;
+  width: 16%;
+  height: 250px;
+  margin: 10px;
+  margin-left: 35px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+.card-div{
+  /* width: auto;
+  height: 100vh; */
+
+  margin-top: 20px;
+}
+
+.image{
+  margin: 40px;
+  margin-left: 30px;
+  width: 100px;
+  height: 100px;  
+}
+
+div.card-div h3{
+  margin-left: 35px;
+  font-weight: lighter;
+}
+ 
+/* for Document css */
+
+.Doc-Content{
+  
+  margin-top: 30px;
+  width: 100%;
+  height: 85vh;
+}
+.left-content{
+  float: left;
+  width: 30%;
+  height: 80vh;
+  
+  background-color: white;
+  margin-left: 20px;  
+}
+.center{
+  transform: rotate(-90deg);
+  height: 97px;
+  width: 40px;
+  float: left;
+}
+
+.right-content{
+  float: left;
+  width: 65%;
+  height: 80vh;
+  background-color: white;  
+  margin-left: 25px; 
+  margin-bottom: 20px;
+  
+}
+
+div.left-content h3{
+  float: right;
+margin-right: 225px;
+font-weight: lighter;
+margin-top: 5px;
+
+}
+
+#left-div{
+  margin: 10px;
+  margin-bottom: 10px;
+}
+
+div .right-content p{
+  margin: 10px;
+  margin-top: 20px;
+  font-weight: lighter; 
+  margin-bottom: 0px;
+}
+
+ .tag {
+  width: 85px;
+  height: 40px;
+  margin: -10px;
+  margin-left: 20px;
+  margin-top: -40px;  
+  background-color: rgb(16, 86, 143);
+}
+
+div .tag p{
+  color: white;
+}
+
+.center{ 
+ font-size: 1.1rem;
+ margin-left: 5px; 
+ 
+}
+
+div.center a{
+  text-decoration: none;
+}
+
+
+.health{
+/* padding-left: 200px;
+ 
+ height: max-content;
+ margin-left: 20px; */
+ display: flex;
+   
+    align-items: center;
+}
+
+.health_card{
+   margin-top:20px;
+  height: 50vh;
+  width: 40vh; 
+position: relative;
+forced-color-adjust: inherit;
+transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.health_card:hover{
+  box-shadow: 1px;
+}
+
+.health_image{
+  width: 41vh;
+}
+
+.card-Details{
+  padding-left: -10px;
+}
+
+.card-Details h2{
+  width: 232px;
+cursor: pointer;
+margin-top: 10px;
+overflow: hidden;
+white-space: nowrap;
+padding-left: 15px;
+text-overflow: ellipsis;
+margin-bottom: 0px;
+}
+.card-Details a{
+  text-decoration: none;
+  color: black;  
+}
+
+.details span{
+  font-size: 14px; 
+  padding-bottom: 5px; 
+}
+
+.data{
+  padding-top: -10px;
+  margin-bottom: -25px;
+  font-size: 16px;
+}
+
+.NoApi{
+ justify-content: center;
+ padding-left: 200px;
+   /* width: 80%; */
+   height: max-content;
+   margin-left: 20px;
+}
+.alert{
+  margin-left: 70vh;
+  margin-right: 30vh;
+  padding-top: 100px;
+}
+
+.alert-image{
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+  margin-bottom: 0px;
+}
+
+.message{
+margin-top: -20px;
+}
+
+.message p{
+  margin-left: -30px;
+  margin-top: -20px;
+}
+
+.apiList{
+  margin-left: 221px;
+  margin-top: 71px;
+  margin-right: 20px;
+}
+
+.thead-text{
+  font-weight: bold;
+}

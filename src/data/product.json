@@ -1,0 +1,720 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "v1",
+      "title": "Product Configuration"
+    },
+    "tags": [
+      {
+        "name": "Product"
+      },
+      {
+        "name": "RatingConfig"
+      },
+      {
+        "name": "Policy"
+      }
+    ],
+    "host": "dev2-publi-3o0d27omfsvr-1156685715.ap-south-1.elb.amazonaws.com",
+    "paths": {
+      "/api/Product/GenericApi": {
+        "post": {
+          "tags": [
+            "Product"
+          ],
+          "operationId": "GenericApi",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ProductCode",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "ApiName",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "RequestApi",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Product/GenericApi#1": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GenericApi",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ProductCode",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "ApiName",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "RequestApi",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetMasterData": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetMasterData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "description": "sMasterlist values that need to be considered for filter",
+              "required": false,
+              "type": "array",
+              "items": {
+                 "type": "string",
+                 "enum": [
+                    "available",
+                    "pending",
+                    "sold"
+                 ],
+                 "default": "available"
+              },
+              "collectionFormat": "multi"
+           
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+         
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetProposalByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetProposalByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "proposalNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CreatePolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CreatePolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/ModifyPolicy": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "ModifyPolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicyDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/RatingConfig/CheckCalculationRatingMapping/CheckCalculationRatingMapping/{CalcualtionId}": {
+        "post": {
+          "tags": [
+            "RatingConfig"
+          ],
+          "operationId": "CheckCalculationRatingMapping",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "CalcualtionId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "dynamic",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/DynamicData"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "DynamicData": {
+        "type": "object",
+        "properties": {
+          "dictionary_rule": {
+            "type": "object"
+          },
+          "dictionary_rate": {
+            "type": "object"
+          }
+        }
+      },
+      "PolicyDTO": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "policyNo": {
+            "type": "string"
+          },
+          "policyVersion": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "agentBusinessTypeId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "agentId": {
+            "format": "double",
+            "type": "number"
+          },
+          "subAgentId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyStartDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyEndDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "inceptionTime": {
+            "type": "string"
+          },
+          "sumInsured": {
+            "format": "double",
+            "type": "number"
+          },
+          "branchIdPk": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "productIdPk": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyTypeId": {
+            "type": "string"
+          },
+          "createdBy": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "documentType": {
+            "type": "string"
+          },
+          "policyStatusId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "businessTypeId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "quoteNo": {
+            "type": "string"
+          },
+          "quoteDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "proposalNo": {
+            "type": "string"
+          },
+          "proposalDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "coverNoteNo": {
+            "type": "string"
+          },
+          "coverNoteIssueDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyStageStatusId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyIssueDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyStageId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "masterPolicyNo": {
+            "type": "string"
+          },
+          "policyRemarks": {
+            "type": "string"
+          },
+          "smcode": {
+            "type": "string"
+          },
+          "irccode": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "csoid": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isUploadedToIcm": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyStatus": {
+            "type": "string"
+          },
+          "corporateId": {
+            "format": "double",
+            "type": "number"
+          },
+          "bundleId": {
+            "format": "double",
+            "type": "number"
+          },
+          "bundleTxnId": {
+            "type": "string"
+          },
+          "bundleParentId": {
+            "format": "double",
+            "type": "number"
+          },
+          "isIrdaupdated": {
+            "type": "boolean"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "rate": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "coverEvent": {
+            "type": "string"
+          },
+          "coverName": {
+            "type": "string"
+          },
+          "masterPremium": {
+            "format": "double",
+            "type": "number"
+          },
+          "premiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "cdaccountNumber": {
+            "type": "string"
+          },
+          "masterType": {
+            "type": "string"
+          },
+          "balanceSumInsued": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyCancelDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "insuredName": {
+            "type": "string"
+          },
+          "policyInsurableDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyInsurableDetailsDTO"
+            }
+          },
+          "endorsementDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/EndorsementDetailsDTO"
+            }
+          }
+        }
+      },
+      "PolicyInsurableDetailsDTO": {
+        "type": "object",
+        "properties": {
+          "insurableId": {
+            "format": "double",
+            "type": "number"
+          },
+          "insurableItem": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "identificationNo": {
+            "type": "string"
+          },
+          "coverName": {
+            "type": "string"
+          },
+          "coverValue": {
+            "type": "string"
+          },
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "benefitAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "coverDynamic": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "EndorsementDetailsDTO": {
+        "type": "object",
+        "properties": {
+          "endorsementId": {
+            "format": "double",
+            "type": "number"
+          },
+          "endorsementNo": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "enddorsementRequest": {
+            "type": "string"
+          },
+          "endorsementEffectivedate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "premiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "gst": {
+            "format": "double",
+            "type": "number"
+          },
+          "totalPremiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "amountBalanced": {
+            "format": "double",
+            "type": "number"
+          },
+          "paymentGatewayReferenceId": {
+            "type": "string"
+          },
+          "dateOfPayment": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "isPremiumRegister": {
+            "type": "boolean"
+          },
+          "updatedResponse": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

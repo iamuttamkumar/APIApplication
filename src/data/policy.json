@@ -1,0 +1,6654 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "v1",
+      "title": "Policy Management"
+    },
+    "host": "dev2-publi-3o0d27omfsvr-1156685715.ap-south-1.elb.amazonaws.com",
+    "paths": {    
+      "/api/Policy/CreatePolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CreatePolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/ModifyPolicy": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "ModifyPolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicyDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetMasterData": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetMasterData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "description": "sMasterlist values that need to be considered for filter",
+              "required": false,
+              "type": "array",
+              "items": {
+                 "type": "string",
+                 "enum": [
+                    "available",
+                    "pending",
+                    "sold"
+                 ],
+                 "default": "available"
+              },
+              "collectionFormat": "multi"
+           
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+         
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetVehicleMasterData": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetVehicleMasterData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "isfilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetGeographyMaster": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetGeographyMaster",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "isfilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetGeoCountry": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetGeoCountry",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetMasterLocation": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetMasterLocation",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "ParentId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "isfilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetTenure": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetTenure",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "productid",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "businessid",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "covertypeid",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetRtoLocation": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetRtoLocation",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "regNo",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetVehicleDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetVehicleDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "pkid",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetVehicleMakeModal": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetVehicleMakeModal",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "sMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "isfilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyById": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyById",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyId",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyDetailsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyDetailsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicyCancellation": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicyCancellation",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policycancel",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicycancelDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicySearch": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicySearch",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policysearch",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicysearchDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CancelPolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CancelPolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policycancelDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicycancelDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PostFileRequest": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PostFileRequest",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "fileRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/FileRequest"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicyDashboardMaster": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicyDashboardMaster",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyGrossWrittenPremium": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyGrossWrittenPremium",
+          "consumes": [
+            
+          ],
+          "produces": [
+            "text/plain",
+            "application/json",
+            "text/json"
+          ],
+          "parameters": [
+            {
+              "name": "productId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "productname",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Year",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "uniqueItems": false,
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/SearchPolicyDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "SearchPolicyDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyId",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyByDetails": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyByDetails",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policySearchby",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicySearchbyPidDTO"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/DownloadPolicyDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "DownloadPolicyDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            "text/plain",
+            "application/json",
+            "text/json"
+          ],
+          "parameters": [
+            {
+              "name": "ProductId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "PartnerId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "uniqueItems": false,
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/WriteToExcel": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "WriteToExcel",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyForClaimsInvoice": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyForClaimsInvoice",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "EventRequet",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/BillingEventRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/BillingEventResponse": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "BillingEventResponse",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "EventRequet",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/BillingEventRequest"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/BillingEventData": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "BillingEventData",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "EventRequet",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/BillingEventRequest"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CreateMultiCoverPolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CreateMultiCoverPolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CreatePolicyWithPayment": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CreatePolicyWithPayment",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicyInsurableDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicyInsurableDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CustomerPolicy": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CustomerPolicy",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "CustomerId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/HC": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "HC",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/HCTest": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "HCTest",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicySearchDashboard": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicySearchDashboard",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policysearch",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicySearchDashboardDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/AddInsurableItem": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "AddInsurableItem",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "insurableItemRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/RemoveInsurableItem": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "RemoveInsurableItem",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "insurableItemRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/SwitchOnOff": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "SwitchOnOff",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "switchOnOffRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetCdBalancePolicyNo": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetCdBalancePolicyNo",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNO",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetAllPolicy": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetAllPolicy",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ProductCode",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetAllActivePolicy": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetAllActivePolicy",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ProductCode",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Source",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/ModifyInsurabableItem": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "ModifyInsurabableItem",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "modifydata",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/UpdateProposal": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "UpdateProposal",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "modifydata",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetInsurableItemDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetInsurableItemDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyNo",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "insurableItemName",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CalCulatePremium": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CalCulatePremium",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "premiumParameter",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/DynamicData"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/UpdateSumInsured": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "UpdateSumInsured",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CreateProposal": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CreateProposal",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetRiskItemByPolicyNo": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetRiskItemByPolicyNo",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNO",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetProposalPolicyDetail": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetProposalPolicyDetail",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "proposalNo",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Mobileno",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "policyno",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/IssuePolicy": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "IssuePolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "IssuepolicyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetProposalByMobileNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetProposalByMobileNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "MobileNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicyEndoresemenet": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicyEndoresemenet",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "endoresementDto",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/DynamicMapper": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "DynamicMapper",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "inputModel",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "mappingname",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/UpdateBalanceSumInsured": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "UpdateBalanceSumInsured",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "in": "query",
+              "required": false,
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/InternalGetPolicyDetailsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "InternalGetPolicyDetailsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/InternalGetPolicyDetailsByPolicyNumber": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "InternalGetPolicyDetailsByPolicyNumber",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/PolicyRequest"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/InternalGetProposalDetailsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "InternalGetProposalDetailsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "proposalNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetDailyAccountDetails": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetDailyAccountDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "month",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "year",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "TxnEventType",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPolicyDocumentsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPolicyDocumentsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/SearchPolicyDetailsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "SearchPolicyDetailsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/SearchProposalDetailsByNumber": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "SearchProposalDetailsByNumber",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ProposalNumber",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/RefundUpload": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "RefundUpload",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/RefundReportUpload": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "RefundReportUpload",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetCDMapperDetails": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetCDMapperDetails",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "endorsementSearch",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/EndorsementSearch"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/ProposalCancellation": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "ProposalCancellation",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "CancellationRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/SmsScheduler": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "SmsScheduler",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GeneratePolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GeneratePolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/PolicyActivate": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "PolicyActivate",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/UpdateCardDetails": {
+        "put": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "UpdateCardDetails",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "updateCardDetails",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/UpdateCardDetails"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/LeadPolicy": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "LeadPolicy",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/LeadInfoDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetPremiumCalculation": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetPremiumCalculation",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "policyRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetDynamicProperty": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetDynamicProperty",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Request",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetDynamicTargetProperty": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetDynamicTargetProperty",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Request",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "object"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Policy/GenericBatchJob": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GenericBatchJob",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "batchRequest",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/BatchRequest"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/CalculateIDV": {
+        "post": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "CalculateIDV",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "calculateIDV",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/CalculateIDV"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Policy/GetExShowroomPrice": {
+        "get": {
+          "tags": [
+            "Policy"
+          ],
+          "operationId": "GetExShowroomPrice",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Make",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Model",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "RTOLocation",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "cc",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Fuel",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "varient",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "RiskType",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/LifeQqData": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "LifeQqData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/GetmasQuestions": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "GetmasQuestions",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/TblContactsData": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "TblContactsData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/ProposalPoll/GetProposalIncompleteData": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "ProposalPoll",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/MastertypeData/GetMasterData": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "MastertypeData",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/CreateAccounts/PartialFormData": {
+        "post": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "CreateAccounts",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "proposalSaveDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/ProposalSaveDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/GetProposalByPositionId": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "GetProposalByPositionId",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "posid",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/GetPolicyByHandledBy": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "GetPolicyByHandledBy",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "handledByid",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/Get": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "Get",
+          "consumes": [
+            
+          ],
+          "produces": [
+            "text/plain",
+            "application/json",
+            "text/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "uniqueItems": false,
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/Get/{id}": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "Get",
+          "consumes": [
+            
+          ],
+          "produces": [
+            "text/plain",
+            "application/json",
+            "text/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "type": "string"
+              }
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/Post": {
+        "post": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "Post",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "value",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/Put/{id}": {
+        "put": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "Put",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "value",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/Delete/{id}": {
+        "delete": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "Delete",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/FetchProposalSubmittedDetails": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "FetchProposalSubmittedDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/FetchPendingRequirements": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "FetchPendingRequirements",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/UpdateEmpProposalData": {
+        "post": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "UpdateEmpProposalData",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "eMPDistribute",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/EMPDistribute"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/UpdateEmpPolicyData": {
+        "post": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "UpdateEmpPolicyData",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "eMPDistribute",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/EMPDistribute"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/PolicyMemberDetails/GetPolicyMemberDetails": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "PolicyMemberDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyID",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/PolicyOwnerDetails/GetPolicyOwnerDetails": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "PolicyOwnerDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyID",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/GetPolicyMemBenefitDetails/GetPolicyMemBenefitDetails": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "GetPolicyMemBenefitDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyID",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/LoadProposalDetails/LoadProposalDetails": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "LoadProposalDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyID",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/FetchUWHomeProposalCount/FetchUWHomeProposalCount": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "FetchUWHomeProposalCount",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/PartialUWPoolGrid": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "PartialUWPoolGrid",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/PartialUWProcessedPoolGrid": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "PartialUWProcessedPoolGrid",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/PartialDiffStatusPoolGrid": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "PartialDiffStatusPoolGrid",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Decision",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Proposal/GetPlanDetailsByPolicyId": {
+        "get": {
+          "tags": [
+            "Proposal"
+          ],
+          "operationId": "GetPlanDetailsByPolicyId",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "PolicyID",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetMaster": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetMaster",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "lMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "isFilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/SaveConfigParameters": {
+        "post": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "SaveConfigParameters",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "reportConfigDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/ReportConfigDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetReportConfigName": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetReportConfigName",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "lMasterlist",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "isFilter",
+              "in": "query",
+              "required": false,
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetParameters": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetParameters",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ReportConfigId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetQueryById": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetQueryById",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ReportConfigId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/QueryExecution": {
+        "post": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "QueryExecution",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "queryDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/QueryDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetReportNameForPermissions": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetReportNameForPermissions",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/GetParameterDetails": {
+        "get": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "GetParameterDetails",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ReportConfigId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/DeleteParameter": {
+        "delete": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "DeleteParameter",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ReportConfigParamId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      },
+      "/api/Report/UpdateReport": {
+        "put": {
+          "tags": [
+            "Report"
+          ],
+          "operationId": "UpdateReport",
+          "consumes": [
+            "application/json-patch+json",
+            "application/json",
+            "text/json",
+            "application/*+json"
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ReportConfigId",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "reportConfigDTO",
+              "in": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/ReportConfigDTO"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Used for certain authorization policies such as Bearer token authentication",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "BadRequest"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "DashboardConfigDTO": {
+        "type": "object",
+        "properties": {
+          "dashboardConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "dashboardConfigName": {
+            "type": "string"
+          },
+          "dbschema": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "modifiedDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "axisDetailsDTO": {
+            "$ref": "#/definitions/AxisDetailsDTO"
+          },
+          "dashboardConfigParamDTO": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DashboardConfigParamDTO"
+            }
+          }
+        }
+      },
+      "AxisDetailsDTO": {
+        "type": "object",
+        "properties": {
+          "xAxisLable": {
+            "type": "string"
+          },
+          "yAxisLable": {
+            "type": "string"
+          },
+          "chartType": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "DashboardConfigParamDTO": {
+        "type": "object",
+        "properties": {
+          "dashboardConfigParamId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "parameterName": {
+            "type": "string"
+          },
+          "rangeType": {
+            "type": "string"
+          },
+          "dataType": {
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "dashboardConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "xaxisLable": {
+            "type": "string"
+          },
+          "yaxisLable": {
+            "type": "string"
+          },
+          "reportConfig": {
+            "$ref": "#/definitions/DashboardConfigDTO"
+          }
+        }
+      },
+      "QueryDTOs": {
+        "type": "object",
+        "properties": {
+          "dashboardConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "paramList": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DbParams"
+            }
+          }
+        }
+      },
+      "DbParams": {
+        "type": "object",
+        "properties": {
+          "parameterName": {
+            "type": "string"
+          },
+          "parameterValue": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyDTO": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "policyNo": {
+            "type": "string"
+          },
+          "policyVersion": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "agentBusinessTypeId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "agentId": {
+            "format": "double",
+            "type": "number"
+          },
+          "subAgentId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyStartDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyEndDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "inceptionTime": {
+            "type": "string"
+          },
+          "sumInsured": {
+            "format": "double",
+            "type": "number"
+          },
+          "branchIdPk": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "productIdPk": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyTypeId": {
+            "type": "string"
+          },
+          "createdBy": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "documentType": {
+            "type": "string"
+          },
+          "policyStatusId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "businessTypeId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "quoteNo": {
+            "type": "string"
+          },
+          "quoteDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "proposalNo": {
+            "type": "string"
+          },
+          "proposalDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "coverNoteNo": {
+            "type": "string"
+          },
+          "coverNoteIssueDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyStageStatusId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyIssueDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyStageId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "masterPolicyNo": {
+            "type": "string"
+          },
+          "policyRemarks": {
+            "type": "string"
+          },
+          "smcode": {
+            "type": "string"
+          },
+          "irccode": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "csoid": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isUploadedToIcm": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyStatus": {
+            "type": "string"
+          },
+          "corporateId": {
+            "format": "double",
+            "type": "number"
+          },
+          "bundleId": {
+            "format": "double",
+            "type": "number"
+          },
+          "bundleTxnId": {
+            "type": "string"
+          },
+          "bundleParentId": {
+            "format": "double",
+            "type": "number"
+          },
+          "isIrdaupdated": {
+            "type": "boolean"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "rate": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "coverEvent": {
+            "type": "string"
+          },
+          "coverName": {
+            "type": "string"
+          },
+          "masterPremium": {
+            "format": "double",
+            "type": "number"
+          },
+          "premiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "cdaccountNumber": {
+            "type": "string"
+          },
+          "masterType": {
+            "type": "string"
+          },
+          "balanceSumInsued": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "policyCancelDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "insuredName": {
+            "type": "string"
+          },
+          "policyInsurableDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyInsurableDetailsDTO"
+            }
+          },
+          "endorsementDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/EndorsementDetailsDTO"
+            }
+          }
+        }
+      },
+      "PolicyInsurableDetailsDTO": {
+        "type": "object",
+        "properties": {
+          "insurableId": {
+            "format": "double",
+            "type": "number"
+          },
+          "insurableItem": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "identificationNo": {
+            "type": "string"
+          },
+          "coverName": {
+            "type": "string"
+          },
+          "coverValue": {
+            "type": "string"
+          },
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "benefitAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "coverDynamic": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "EndorsementDetailsDTO": {
+        "type": "object",
+        "properties": {
+          "endorsementId": {
+            "format": "double",
+            "type": "number"
+          },
+          "endorsementNo": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "enddorsementRequest": {
+            "type": "string"
+          },
+          "endorsementEffectivedate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "premiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "gst": {
+            "format": "double",
+            "type": "number"
+          },
+          "totalPremiumAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "amountBalanced": {
+            "format": "double",
+            "type": "number"
+          },
+          "paymentGatewayReferenceId": {
+            "type": "string"
+          },
+          "dateOfPayment": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "isPremiumRegister": {
+            "type": "boolean"
+          },
+          "updatedResponse": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicycancelDTO": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "policynumber": {
+            "type": "string"
+          },
+          "policyStatusId": {
+            "type": "string"
+          },
+          "remarks": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicysearchDTO": {
+        "type": "object",
+        "properties": {
+          "flag": {
+            "type": "boolean"
+          },
+          "proposalnumber": {
+            "type": "string"
+          },
+          "policynumber": {
+            "type": "string"
+          },
+          "eventId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "partnerId": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "insuredreference": {
+            "type": "string"
+          },
+          "eventDate": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
+      "FileRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "content": {
+            "format": "byte",
+            "type": "string"
+          }
+        }
+      },
+      "PolicySearchbyPidDTO": {
+        "type": "object",
+        "properties": {
+          "partnerId": {
+            "format": "double",
+            "type": "number"
+          },
+          "productId": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "BillingEventRequest": {
+        "type": "object",
+        "properties": {
+          "fromDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "toDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "customerId": {
+            "format": "double",
+            "type": "number"
+          },
+          "evtId": {
+            "format": "double",
+            "type": "number"
+          }
+        }
+      },
+      "PolicySearchDashboardDTO": {
+        "type": "object",
+        "properties": {
+          "partnerId": {
+            "format": "double",
+            "type": "number"
+          },
+          "productId": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "DynamicData": {
+        "type": "object",
+        "properties": {
+          "dictionary_rule": {
+            "type": "object"
+          },
+          "dictionary_rate": {
+            "type": "object"
+          }
+        }
+      },
+      "PolicyRequest": {
+        "type": "object",
+        "properties": {
+          "policyNumber": {
+            "type": "string"
+          },
+          "date": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
+      "EndorsementSearch": {
+        "type": "object",
+        "properties": {
+          "policyNumber": {
+            "type": "string"
+          },
+          "fromDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "toDate": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
+      "UpdateCardDetails": {
+        "type": "object",
+        "properties": {
+          "policyNumber": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "refrenceNumber": {
+            "type": "string"
+          }
+        }
+      },
+      "LeadInfoDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "emailId": {
+            "type": "string"
+          },
+          "productCode": {
+            "type": "string"
+          },
+          "productId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "partnerId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isPayment": {
+            "type": "boolean"
+          },
+          "smsstatus": {
+            "type": "boolean"
+          },
+          "emailstatus": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BatchRequest": {
+        "type": "object",
+        "properties": {
+          "txnDateTime": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "proposalNumberList": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "batchName": {
+            "type": "string"
+          }
+        }
+      },
+      "CalculateIDV": {
+        "type": "object",
+        "properties": {
+          "purchaseDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyStart": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "make": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "rtoLocation": {
+            "type": "string"
+          },
+          "cc": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "fuel": {
+            "type": "string"
+          },
+          "varient": {
+            "type": "string"
+          },
+          "riskType": {
+            "type": "string"
+          }
+        }
+      },
+      "ProposalSaveDTO": {
+        "type": "object",
+        "properties": {
+          "policyID": {
+            "format": "double",
+            "type": "number"
+          },
+          "quoteNo": {
+            "type": "string"
+          },
+          "otherDetails": {
+            "type": "string"
+          },
+          "paymentRecieptPreferredBy": {
+            "type": "string"
+          },
+          "bankAccNo": {
+            "type": "string"
+          },
+          "nameOfBranch": {
+            "type": "string"
+          },
+          "creditCardNo": {
+            "type": "string"
+          },
+          "nameOfBank": {
+            "type": "string"
+          },
+          "preferredLanguage": {
+            "type": "string"
+          },
+          "modeOfCommunication": {
+            "type": "string"
+          },
+          "proposalSubmitDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "policyMemDocuments": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemDocuments"
+            }
+          },
+          "policyMemExtension": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemExtension"
+            }
+          },
+          "policyClientDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyClientDetails"
+            }
+          },
+          "policyMembersDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMembersDetails"
+            }
+          }
+        }
+      },
+      "PolicyMemDocuments": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "format": "double",
+            "type": "number"
+          },
+          "documentType": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "itemType": {
+            "type": "string"
+          },
+          "member": {
+            "type": "string"
+          },
+          "documentID": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemExtension": {
+        "type": "object",
+        "properties": {
+          "proposerDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "proposerPlace": {
+            "type": "string"
+          },
+          "proposerCountry": {
+            "type": "string"
+          },
+          "spouseDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "spousePlace": {
+            "type": "string"
+          },
+          "spouseCountry": {
+            "type": "string"
+          },
+          "date": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "wprComments": {
+            "type": "string"
+          },
+          "isPolicy": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PolicyClientDetails": {
+        "type": "object",
+        "properties": {
+          "salutation": {
+            "type": "string"
+          },
+          "fullname": {
+            "type": "string"
+          },
+          "givenName": {
+            "type": "string"
+          },
+          "nameWithInitial": {
+            "type": "string"
+          },
+          "dob": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "gender": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "home": {
+            "type": "string"
+          },
+          "mobileNo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "work": {
+            "type": "string"
+          },
+          "emiratesId": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          },
+          "maritalStatus": {
+            "type": "string"
+          },
+          "occupationId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isPermanentAddrSameasCommAddr": {
+            "type": "boolean"
+          },
+          "permanetAddressId": {
+            "format": "double",
+            "type": "number"
+          },
+          "nameOfEmployee": {
+            "type": "string"
+          },
+          "natureOfDuties": {
+            "type": "string"
+          },
+          "annualIncome": {
+            "type": "string"
+          },
+          "age": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "citizenship1": {
+            "type": "string"
+          },
+          "citizenship2": {
+            "type": "string"
+          },
+          "occupationHazardousWork": {
+            "type": "boolean"
+          },
+          "passportNumber": {
+            "type": "string"
+          },
+          "countryOfResidence": {
+            "type": "string"
+          },
+          "specifyOccupationWork": {
+            "type": "string"
+          },
+          "citizenShip": {
+            "type": "boolean"
+          },
+          "countryOfOccupation": {
+            "type": "string"
+          },
+          "addressId": {
+            "format": "double",
+            "type": "number"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "district": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "pAddress1": {
+            "type": "string"
+          },
+          "pAddress2": {
+            "type": "string"
+          },
+          "pAddress3": {
+            "type": "string"
+          },
+          "pPostalCode": {
+            "type": "string"
+          },
+          "pDistrict": {
+            "type": "string"
+          },
+          "pProvince": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMembersDetails": {
+        "type": "object",
+        "properties": {
+          "salutation": {
+            "type": "string"
+          },
+          "fullname": {
+            "type": "string"
+          },
+          "givenName": {
+            "type": "string"
+          },
+          "nameWithInitial": {
+            "type": "string"
+          },
+          "dob": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "gender": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "home": {
+            "type": "string"
+          },
+          "mobileNo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "work": {
+            "type": "string"
+          },
+          "emiratesId": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string"
+          },
+          "maritalStatus": {
+            "type": "string"
+          },
+          "occupationId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "relationShipWithProposer": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isPermanentAddrSameasCommAddr": {
+            "type": "boolean"
+          },
+          "permanetAddressId": {
+            "format": "double",
+            "type": "number"
+          },
+          "nameOfEmployee": {
+            "type": "string"
+          },
+          "natureOfDuties": {
+            "type": "string"
+          },
+          "annualIncome": {
+            "type": "string"
+          },
+          "isProposerAssured": {
+            "type": "boolean"
+          },
+          "age": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "citizenship1": {
+            "type": "string"
+          },
+          "citizenship2": {
+            "type": "string"
+          },
+          "occupationHazardousWork": {
+            "type": "boolean"
+          },
+          "passportNumber": {
+            "type": "string"
+          },
+          "countryOfResidence": {
+            "type": "string"
+          },
+          "specifyOccupationWork": {
+            "type": "string"
+          },
+          "citizenShip": {
+            "type": "boolean"
+          },
+          "countryOfOccupation": {
+            "type": "string"
+          },
+          "addressId": {
+            "format": "double",
+            "type": "number"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "district": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "pAddress1": {
+            "type": "string"
+          },
+          "pAddress2": {
+            "type": "string"
+          },
+          "pAddress3": {
+            "type": "string"
+          },
+          "pPostalCode": {
+            "type": "string"
+          },
+          "pDistrict": {
+            "type": "string"
+          },
+          "pProvince": {
+            "type": "string"
+          },
+          "policyMemberLifeStyleDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemberLifeStyleDetails"
+            }
+          },
+          "policyMemClaimInfo": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemClaimInfo"
+            }
+          },
+          "policyMemInsuranceInfo": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemInsuranceInfo"
+            }
+          },
+          "policyMemFamilyHistory": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemFamilyHistory"
+            }
+          },
+          "policyMemberQuestions": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemberQuestions"
+            }
+          },
+          "policyMemberBenefitDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemberBenefitDetails"
+            }
+          },
+          "policyQuestionDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyQuestionDetails"
+            }
+          }
+        }
+      },
+      "PolicyMemberLifeStyleDetails": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "string"
+          },
+          "heightFeets": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "weightUnit": {
+            "type": "string"
+          },
+          "isSmoker": {
+            "type": "boolean"
+          },
+          "isAlcoholic": {
+            "type": "boolean"
+          },
+          "isNarcoticDrug": {
+            "type": "boolean"
+          },
+          "smokeDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/SmokeDetails"
+            }
+          },
+          "alcoholDetails": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/AlcoholDetails"
+            }
+          }
+        }
+      },
+      "PolicyMemClaimInfo": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "policyNo": {
+            "type": "string"
+          },
+          "natureOfClaim": {
+            "type": "string"
+          },
+          "dateOfClaim": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemInsuranceInfo": {
+        "type": "object",
+        "properties": {
+          "insuranceCompanyName": {
+            "type": "string"
+          },
+          "policyNo": {
+            "type": "string"
+          },
+          "sumAssured": {
+            "type": "string"
+          },
+          "accidentalDeathBenefit": {
+            "type": "string"
+          },
+          "criticalIllnessBenefit": {
+            "type": "string"
+          },
+          "permanentDisability": {
+            "type": "string"
+          },
+          "hospitalization": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemFamilyHistory": {
+        "type": "object",
+        "properties": {
+          "relationship": {
+            "type": "string"
+          },
+          "presentage": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "stateofhealth": {
+            "type": "string"
+          },
+          "ageatdeath": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "cause": {
+            "type": "string"
+          },
+          "anyPerson": {
+            "type": "boolean"
+          },
+          "below60AgeDeath": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemberQuestions": {
+        "type": "object",
+        "properties": {
+          "qid": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "itemType": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "subAnswer": {
+            "type": "string"
+          },
+          "subType": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemberBenefitDetails": {
+        "type": "object",
+        "properties": {
+          "sumInsured": {
+            "type": "string"
+          },
+          "premium": {
+            "type": "string"
+          },
+          "relationShipWithProposer": {
+            "type": "string"
+          },
+          "assuredName": {
+            "type": "string"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "loadingAmount": {
+            "type": "string"
+          },
+          "totalPremium": {
+            "type": "string"
+          },
+          "loadingPerc": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "loadinPerMille": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "PolicyQuestionDetails": {
+        "type": "object",
+        "properties": {
+          "policyMemCurrentMedicine": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemCurrentMedicine"
+            }
+          },
+          "policyMemLastMedicine": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemLastMedicine"
+            }
+          },
+          "policyMemTreatment": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemTreatment"
+            }
+          },
+          "policyMemDHC": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/PolicyMemDHC"
+            }
+          }
+        }
+      },
+      "SmokeDetails": {
+        "type": "object",
+        "properties": {
+          "smokeType": {
+            "type": "string"
+          },
+          "smokeQuantity": {
+            "type": "string"
+          },
+          "smokeDuration": {
+            "type": "string"
+          }
+        }
+      },
+      "AlcoholDetails": {
+        "type": "object",
+        "properties": {
+          "alcholType": {
+            "type": "string"
+          },
+          "alcholQuantity": {
+            "type": "string"
+          },
+          "alcholPerDay": {
+            "type": "string"
+          },
+          "alcholDuration": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemCurrentMedicine": {
+        "type": "object",
+        "properties": {
+          "qId": {
+            "type": "string"
+          },
+          "nameOfMedication": {
+            "type": "string"
+          },
+          "dose": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemLastMedicine": {
+        "type": "object",
+        "properties": {
+          "qId": {
+            "type": "string"
+          },
+          "nameOfMedication": {
+            "type": "string"
+          },
+          "dose": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "dateLastTaken": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemTreatment": {
+        "type": "object",
+        "properties": {
+          "qId": {
+            "type": "string"
+          },
+          "nameOfTreatment": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      },
+      "PolicyMemDHC": {
+        "type": "object",
+        "properties": {
+          "qId": {
+            "type": "string"
+          },
+          "nameOfDoctor": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "dateOfLastConsult": {
+            "type": "string"
+          }
+        }
+      },
+      "EMPDistribute": {
+        "type": "object",
+        "properties": {
+          "empDistributeDTO": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/EMPDistributeDTO"
+            }
+          }
+        }
+      },
+      "EMPDistributeDTO": {
+        "type": "object",
+        "properties": {
+          "positionId": {
+            "format": "double",
+            "type": "number"
+          },
+          "primaryIds": {
+            "format": "double",
+            "type": "number"
+          }
+        }
+      },
+      "ReportConfigDTO": {
+        "type": "object",
+        "properties": {
+          "reportConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "reportConfigName": {
+            "type": "string"
+          },
+          "dbschema": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "modifiedDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "tblReportConfigParam": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ReportConfigParamDTO"
+            }
+          }
+        }
+      },
+      "ReportConfigParamDTO": {
+        "type": "object",
+        "properties": {
+          "reportConfigParamId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "parameterName": {
+            "type": "string"
+          },
+          "rangeType": {
+            "type": "string"
+          },
+          "dataType": {
+            "type": "string"
+          },
+          "createdDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "reportConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "reportConfig": {
+            "$ref": "#/definitions/ReportConfigDTO"
+          }
+        }
+      },
+      "QueryDTO": {
+        "type": "object",
+        "properties": {
+          "reportConfigId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "paramList": {
+            "uniqueItems": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Params"
+            }
+          }
+        }
+      },
+      "Params": {
+        "type": "object",
+        "properties": {
+          "parameterName": {
+            "type": "string"
+          },
+          "parameterValue": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
